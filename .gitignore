@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Large data files
+data/prepared_mock_transactions_1M.json
+data/mock_transactions_1M.json
+data/prepared_test_mock_transactions.json
+data/test_mock_transactions.json
+data/*.csv
+data/*.parquet
+data/*.db
+
+# Allow smaller sample data
+!data/sample_*.json
+
+# Benchmark results
+tools/benchmarking/results/
+
+# IDE settings
+.idea/
+.vscode/
+.cursor/
+*.swp
+*.swo
+.DS_Store
+
+# Virtual Environment
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Local configuration
+.local/
+local_settings.py
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+coverage.xml
+*.cover 

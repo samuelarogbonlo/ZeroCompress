@@ -1,0 +1,633 @@
+{
+  "address_frequency_analysis": {
+    "total_address_references": 1949954,
+    "unique_addresses": 584470,
+    "unique_to_addresses": 284635,
+    "unique_from_addresses": 299846,
+    "address_reuse_rate": 0.7002647241934938,
+    "top_addresses": [
+      {
+        "address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "count": 124920,
+        "percentage": 6.406304969245428
+      },
+      {
+        "address": "0x3cb138c1c5bb61c00519dbe7d38b0738c82bf8a1",
+        "count": 124509,
+        "percentage": 6.385227548957566
+      },
+      {
+        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "count": 124377,
+        "percentage": 6.37845815850015
+      },
+      {
+        "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "count": 124307,
+        "percentage": 6.374868330227278
+      },
+      {
+        "address": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "count": 124232,
+        "percentage": 6.3710220856492
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "count": 124134,
+        "percentage": 6.365996326067179
+      },
+      {
+        "address": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
+        "count": 124127,
+        "percentage": 6.365637343239892
+      },
+      {
+        "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "count": 124101,
+        "percentage": 6.364303978452825
+      },
+      {
+        "address": "0x242301fa9f9a1e2d0b0f9922ef54031f8e86a1b9",
+        "count": 123921,
+        "percentage": 6.355072991465439
+      },
+      {
+        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "count": 123918,
+        "percentage": 6.354919141682316
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "count": 122949,
+        "percentage": 6.305225661733559
+      },
+      {
+        "address": "0xba18e1bad15bb5dc651cfadc2b9ea9c8cf1330e0",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x4c24c7865eed607de4fc75a3a1776e34fcc167e0",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x2c38db1b831a5062f223fcb0ccde737511195c8c",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0xbbb025c5c2e69c6c450010faf6652bb269e87a94",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x34acb50a518b8c93da9aaea13c50707683bcb4b1",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x68954f0bfcd94d23b1e6008dafd787c808c93a46",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0xc7463793efad3b99e0dc52d6eba0cf41145cdecd",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x52601444e29d41f9c54713be4531511939c3fd0c",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      },
+      {
+        "address": "0x1af4a2217138352755c3ce8a7153ec560481872d",
+        "count": 1,
+        "percentage": 5.1283261041029684e-05
+      }
+    ],
+    "address_frequency_distribution": {
+      "1": 584459,
+      "2-5": 0,
+      "6-10": 0,
+      "11-50": 0,
+      "51-100": 0,
+      "101-500": 0,
+      "501+": 11
+    },
+    "pointer_size_bytes": 3,
+    "original_address_bytes": 38999080,
+    "compressed_address_bytes": 15785852,
+    "potential_savings_percentage": 59.52250155644697
+  },
+  "calldata_pattern_analysis": {
+    "total_embedded_addresses": 4889658,
+    "unique_embedded_addresses": 4344143,
+    "address_reuse_rate_in_calldata": 0.11156506242358873,
+    "top_embedded_addresses": [
+      {
+        "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "count": 48954,
+        "percentage": 1.0011743152588586
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "count": 48800,
+        "percentage": 0.9980248107331842
+      },
+      {
+        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "count": 48750,
+        "percentage": 0.9970022443287445
+      },
+      {
+        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "count": 48624,
+        "percentage": 0.9944253769895564
+      },
+      {
+        "address": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+        "count": 48555,
+        "percentage": 0.9930142353514295
+      },
+      {
+        "address": "0x242301fa9f9a1e2d0b0f9922ef54031f8e86a1b9",
+        "count": 48493,
+        "percentage": 0.9917462530099243
+      },
+      {
+        "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "count": 48468,
+        "percentage": 0.9912349698077043
+      },
+      {
+        "address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "count": 48408,
+        "percentage": 0.9900078901223767
+      },
+      {
+        "address": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
+        "count": 48314,
+        "percentage": 0.9880854652820299
+      },
+      {
+        "address": "0x3cb138c1c5bb61c00519dbe7d38b0738c82bf8a1",
+        "count": 48277,
+        "percentage": 0.9873287661427446
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "count": 48257,
+        "percentage": 0.9869197395809687
+      },
+      {
+        "address": "0x000000000000000000000000000000000000f482",
+        "count": 7,
+        "percentage": 0.00014315929662156332
+      },
+      {
+        "address": "0x0000000000000000000000000000000000006237",
+        "count": 6,
+        "percentage": 0.00012270796853276856
+      },
+      {
+        "address": "0x000000000000000000000000000000000000fdb8",
+        "count": 6,
+        "percentage": 0.00012270796853276856
+      },
+      {
+        "address": "0x0000000000000000000000000000000000003985",
+        "count": 6,
+        "percentage": 0.00012270796853276856
+      },
+      {
+        "address": "0x000000000000000000000000000000000000f45c",
+        "count": 5,
+        "percentage": 0.00010225664044397379
+      },
+      {
+        "address": "0x0000000000000000000000000000000000001262",
+        "count": 5,
+        "percentage": 0.00010225664044397379
+      },
+      {
+        "address": "0x0000000000000000000000000000000000002274",
+        "count": 5,
+        "percentage": 0.00010225664044397379
+      },
+      {
+        "address": "0x0000000000000000000000000000000000007fdb",
+        "count": 5,
+        "percentage": 0.00010225664044397379
+      },
+      {
+        "address": "0x0000000000000000000000000000000000008b31",
+        "count": 5,
+        "percentage": 0.00010225664044397379
+      }
+    ],
+    "embedded_address_frequency": {
+      "1": 4334650,
+      "2-5": 9478,
+      "6-10": 4,
+      "11-50": 0,
+      "51-100": 0,
+      "101-500": 0,
+      "501+": 11
+    },
+    "embedded_pointer_size_bytes": 3,
+    "original_embedded_bytes": 97793160,
+    "compressed_embedded_bytes": 88519405,
+    "potential_calldata_savings_percentage": 9.483030306005046
+  },
+  "temporal_locality_analysis": {
+    "temporal_locality_analysis": {
+      "window_50": {
+        "window_count": 40000,
+        "avg_compression_ratio": 2.456521716701118,
+        "max_compression_ratio": 4.304347826086956,
+        "detailed_windows": [
+          {
+            "window_start": 0,
+            "window_size": 50,
+            "total_addresses": 97,
+            "unique_addresses": 40,
+            "compression_ratio": 2.425
+          },
+          {
+            "window_start": 25,
+            "window_size": 50,
+            "total_addresses": 98,
+            "unique_addresses": 36,
+            "compression_ratio": 2.7222222222222223
+          },
+          {
+            "window_start": 50,
+            "window_size": 50,
+            "total_addresses": 98,
+            "unique_addresses": 40,
+            "compression_ratio": 2.45
+          },
+          {
+            "window_start": 75,
+            "window_size": 50,
+            "total_addresses": 99,
+            "unique_addresses": 39,
+            "compression_ratio": 2.5384615384615383
+          },
+          {
+            "window_start": 100,
+            "window_size": 50,
+            "total_addresses": 98,
+            "unique_addresses": 34,
+            "compression_ratio": 2.8823529411764706
+          },
+          {
+            "window_start": 125,
+            "window_size": 50,
+            "total_addresses": 95,
+            "unique_addresses": 34,
+            "compression_ratio": 2.7941176470588234
+          },
+          {
+            "window_start": 150,
+            "window_size": 50,
+            "total_addresses": 97,
+            "unique_addresses": 35,
+            "compression_ratio": 2.7714285714285714
+          },
+          {
+            "window_start": 175,
+            "window_size": 50,
+            "total_addresses": 99,
+            "unique_addresses": 43,
+            "compression_ratio": 2.302325581395349
+          },
+          {
+            "window_start": 200,
+            "window_size": 50,
+            "total_addresses": 97,
+            "unique_addresses": 44,
+            "compression_ratio": 2.2045454545454546
+          },
+          {
+            "window_start": 225,
+            "window_size": 50,
+            "total_addresses": 96,
+            "unique_addresses": 43,
+            "compression_ratio": 2.2325581395348837
+          }
+        ]
+      },
+      "window_100": {
+        "window_count": 20000,
+        "avg_compression_ratio": 2.832438352004336,
+        "max_compression_ratio": 4.148936170212766,
+        "detailed_windows": [
+          {
+            "window_start": 0,
+            "window_size": 100,
+            "total_addresses": 195,
+            "unique_addresses": 69,
+            "compression_ratio": 2.8260869565217392
+          },
+          {
+            "window_start": 50,
+            "window_size": 100,
+            "total_addresses": 196,
+            "unique_addresses": 63,
+            "compression_ratio": 3.111111111111111
+          },
+          {
+            "window_start": 100,
+            "window_size": 100,
+            "total_addresses": 195,
+            "unique_addresses": 58,
+            "compression_ratio": 3.3620689655172415
+          },
+          {
+            "window_start": 150,
+            "window_size": 100,
+            "total_addresses": 194,
+            "unique_addresses": 68,
+            "compression_ratio": 2.8529411764705883
+          },
+          {
+            "window_start": 200,
+            "window_size": 100,
+            "total_addresses": 195,
+            "unique_addresses": 75,
+            "compression_ratio": 2.6
+          },
+          {
+            "window_start": 250,
+            "window_size": 100,
+            "total_addresses": 196,
+            "unique_addresses": 69,
+            "compression_ratio": 2.8405797101449277
+          },
+          {
+            "window_start": 300,
+            "window_size": 100,
+            "total_addresses": 193,
+            "unique_addresses": 67,
+            "compression_ratio": 2.8805970149253732
+          },
+          {
+            "window_start": 350,
+            "window_size": 100,
+            "total_addresses": 194,
+            "unique_addresses": 70,
+            "compression_ratio": 2.7714285714285714
+          },
+          {
+            "window_start": 400,
+            "window_size": 100,
+            "total_addresses": 197,
+            "unique_addresses": 73,
+            "compression_ratio": 2.6986301369863015
+          },
+          {
+            "window_start": 450,
+            "window_size": 100,
+            "total_addresses": 196,
+            "unique_addresses": 71,
+            "compression_ratio": 2.76056338028169
+          }
+        ]
+      },
+      "window_200": {
+        "window_count": 10000,
+        "avg_compression_ratio": 3.0650829817999043,
+        "max_compression_ratio": 4.266666666666667,
+        "detailed_windows": [
+          {
+            "window_start": 0,
+            "window_size": 200,
+            "total_addresses": 390,
+            "unique_addresses": 116,
+            "compression_ratio": 3.3620689655172415
+          },
+          {
+            "window_start": 100,
+            "window_size": 200,
+            "total_addresses": 390,
+            "unique_addresses": 122,
+            "compression_ratio": 3.19672131147541
+          },
+          {
+            "window_start": 200,
+            "window_size": 200,
+            "total_addresses": 388,
+            "unique_addresses": 131,
+            "compression_ratio": 2.9618320610687023
+          },
+          {
+            "window_start": 300,
+            "window_size": 200,
+            "total_addresses": 390,
+            "unique_addresses": 129,
+            "compression_ratio": 3.0232558139534884
+          },
+          {
+            "window_start": 400,
+            "window_size": 200,
+            "total_addresses": 395,
+            "unique_addresses": 134,
+            "compression_ratio": 2.9477611940298507
+          },
+          {
+            "window_start": 500,
+            "window_size": 200,
+            "total_addresses": 394,
+            "unique_addresses": 131,
+            "compression_ratio": 3.0076335877862594
+          },
+          {
+            "window_start": 600,
+            "window_size": 200,
+            "total_addresses": 395,
+            "unique_addresses": 136,
+            "compression_ratio": 2.9044117647058822
+          },
+          {
+            "window_start": 700,
+            "window_size": 200,
+            "total_addresses": 393,
+            "unique_addresses": 135,
+            "compression_ratio": 2.911111111111111
+          },
+          {
+            "window_start": 800,
+            "window_size": 200,
+            "total_addresses": 387,
+            "unique_addresses": 134,
+            "compression_ratio": 2.888059701492537
+          },
+          {
+            "window_start": 900,
+            "window_size": 200,
+            "total_addresses": 389,
+            "unique_addresses": 140,
+            "compression_ratio": 2.7785714285714285
+          }
+        ]
+      },
+      "window_500": {
+        "window_count": 4000,
+        "avg_compression_ratio": 3.222541476761883,
+        "max_compression_ratio": 3.939516129032258,
+        "detailed_windows": [
+          {
+            "window_start": 0,
+            "window_size": 500,
+            "total_addresses": 975,
+            "unique_addresses": 298,
+            "compression_ratio": 3.271812080536913
+          },
+          {
+            "window_start": 250,
+            "window_size": 500,
+            "total_addresses": 982,
+            "unique_addresses": 310,
+            "compression_ratio": 3.167741935483871
+          },
+          {
+            "window_start": 500,
+            "window_size": 500,
+            "total_addresses": 980,
+            "unique_addresses": 320,
+            "compression_ratio": 3.0625
+          },
+          {
+            "window_start": 750,
+            "window_size": 500,
+            "total_addresses": 975,
+            "unique_addresses": 319,
+            "compression_ratio": 3.0564263322884013
+          },
+          {
+            "window_start": 1000,
+            "window_size": 500,
+            "total_addresses": 976,
+            "unique_addresses": 309,
+            "compression_ratio": 3.158576051779935
+          },
+          {
+            "window_start": 1250,
+            "window_size": 500,
+            "total_addresses": 977,
+            "unique_addresses": 307,
+            "compression_ratio": 3.182410423452769
+          },
+          {
+            "window_start": 1500,
+            "window_size": 500,
+            "total_addresses": 975,
+            "unique_addresses": 316,
+            "compression_ratio": 3.0854430379746836
+          },
+          {
+            "window_start": 1750,
+            "window_size": 500,
+            "total_addresses": 973,
+            "unique_addresses": 318,
+            "compression_ratio": 3.059748427672956
+          },
+          {
+            "window_start": 2000,
+            "window_size": 500,
+            "total_addresses": 976,
+            "unique_addresses": 317,
+            "compression_ratio": 3.078864353312303
+          },
+          {
+            "window_start": 2250,
+            "window_size": 500,
+            "total_addresses": 971,
+            "unique_addresses": 310,
+            "compression_ratio": 3.132258064516129
+          }
+        ]
+      },
+      "window_1000": {
+        "window_count": 2000,
+        "avg_compression_ratio": 3.27839733958358,
+        "max_compression_ratio": 3.690566037735849,
+        "detailed_windows": [
+          {
+            "window_start": 0,
+            "window_size": 1000,
+            "total_addresses": 1955,
+            "unique_addresses": 607,
+            "compression_ratio": 3.2207578253706752
+          },
+          {
+            "window_start": 500,
+            "window_size": 1000,
+            "total_addresses": 1956,
+            "unique_addresses": 618,
+            "compression_ratio": 3.1650485436893203
+          },
+          {
+            "window_start": 1000,
+            "window_size": 1000,
+            "total_addresses": 1951,
+            "unique_addresses": 614,
+            "compression_ratio": 3.1775244299674266
+          },
+          {
+            "window_start": 1500,
+            "window_size": 1000,
+            "total_addresses": 1951,
+            "unique_addresses": 622,
+            "compression_ratio": 3.1366559485530545
+          },
+          {
+            "window_start": 2000,
+            "window_size": 1000,
+            "total_addresses": 1943,
+            "unique_addresses": 634,
+            "compression_ratio": 3.0646687697160884
+          },
+          {
+            "window_start": 2500,
+            "window_size": 1000,
+            "total_addresses": 1938,
+            "unique_addresses": 608,
+            "compression_ratio": 3.1875
+          },
+          {
+            "window_start": 3000,
+            "window_size": 1000,
+            "total_addresses": 1940,
+            "unique_addresses": 585,
+            "compression_ratio": 3.3162393162393164
+          },
+          {
+            "window_start": 3500,
+            "window_size": 1000,
+            "total_addresses": 1945,
+            "unique_addresses": 597,
+            "compression_ratio": 3.257956448911223
+          },
+          {
+            "window_start": 4000,
+            "window_size": 1000,
+            "total_addresses": 1950,
+            "unique_addresses": 572,
+            "compression_ratio": 3.409090909090909
+          },
+          {
+            "window_start": 4500,
+            "window_size": 1000,
+            "total_addresses": 1942,
+            "unique_addresses": 595,
+            "compression_ratio": 3.2638655462184873
+          }
+        ]
+      }
+    }
+  }
+}

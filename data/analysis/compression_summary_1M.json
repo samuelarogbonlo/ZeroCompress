@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-05-06T22:26:12.170048",
+  "data_analyzed": {
+    "transaction_count": 0,
+    "total_bytes": 168297779
+  },
+  "compression_potential": {
+    "zero_byte_compression": 33.131294501515676,
+    "address_compression": 59.52250155644697,
+    "calldata_pattern_compression": 0,
+    "overall_compression_percentage": 72.93322077262695
+  },
+  "transaction_type_distribution": {
+    "erc20_transfer": {
+      "transaction_count": 400236,
+      "total_bytes": 23725750,
+      "total_zero_bytes": 9481178,
+      "zero_byte_percentage": 39.96155232184441,
+      "potential_savings": 27.973086625291085
+    },
+    "erc20_transferFrom": {
+      "transaction_count": 99825,
+      "total_bytes": 8533428,
+      "total_zero_bytes": 3806532,
+      "zero_byte_percentage": 44.6073020127433,
+      "potential_savings": 31.225111408920306
+    },
+    "erc20_approve": {
+      "transaction_count": 149572,
+      "total_bytes": 8865139,
+      "total_zero_bytes": 3589659,
+      "zero_byte_percentage": 40.4918524120152,
+      "potential_savings": 28.344296688410637
+    },
+    "contract_deployment": {
+      "transaction_count": 50046,
+      "total_bytes": 87588870,
+      "total_zero_bytes": 35235533,
+      "zero_byte_percentage": 40.228322388449584,
+      "potential_savings": 28.159825671914707
+    },
+    "uniswap_swap": {
+      "transaction_count": 149987,
+      "total_bytes": 34200620,
+      "total_zero_bytes": 15699389,
+      "zero_byte_percentage": 45.903814024424115,
+      "potential_savings": 32.132669817096875
+    },
+    "eth_transfer": {
+      "transaction_count": 99999,
+      "total_bytes": 0,
+      "total_zero_bytes": 0,
+      "zero_byte_percentage": 0,
+      "potential_savings": 0.0
+    },
+    "contract_interaction": {
+      "transaction_count": 50335,
+      "total_bytes": 5383972,
+      "total_zero_bytes": 1886750,
+      "zero_byte_percentage": 35.04383009421297,
+      "potential_savings": 24.53068106594908
+    }
+  }
+}

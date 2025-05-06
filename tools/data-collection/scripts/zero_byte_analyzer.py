@@ -56,6 +56,11 @@ class ZeroByteAnalyzer:
     
     def _hex_to_bytes(self, hex_str: str) -> bytearray:
         """Convert hex string to bytearray"""
+        # Handle empty or None input
+        if not hex_str:
+            return bytearray()
+            
+        # Remove 0x prefix if present
         if hex_str.startswith('0x'):
             hex_str = hex_str[2:]
         
@@ -63,7 +68,17 @@ class ZeroByteAnalyzer:
         if len(hex_str) % 2 != 0:
             hex_str = '0' + hex_str
         
-        return bytearray.fromhex(hex_str)
+        # Check for invalid characters and fix if needed
+        try:
+            return bytearray.fromhex(hex_str)
+        except ValueError:
+            # Clean the string by removing non-hex characters
+            cleaned = ''.join(c for c in hex_str if c in '0123456789abcdefABCDEF')
+            # Ensure even length again after cleaning
+            if len(cleaned) % 2 != 0:
+                cleaned = '0' + cleaned
+                
+            return bytearray.fromhex(cleaned)
     
     def analyze_zero_byte_patterns(self) -> Dict[str, Any]:
         """Analyze zero-byte patterns in transaction data"""

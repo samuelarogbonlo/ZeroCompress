@@ -1,0 +1,177 @@
+{
+  "address_frequency_analysis": {
+    "total_address_references": 9,
+    "unique_addresses": 6,
+    "unique_to_addresses": 3,
+    "unique_from_addresses": 3,
+    "address_reuse_rate": 0.3333333333333333,
+    "top_addresses": [
+      {
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "count": 2,
+        "percentage": 22.22222222222222
+      },
+      {
+        "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        "count": 2,
+        "percentage": 22.22222222222222
+      },
+      {
+        "address": "0x28C6c06298d514Db089934071355E5743bf21d60",
+        "count": 2,
+        "percentage": 22.22222222222222
+      },
+      {
+        "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+        "count": 1,
+        "percentage": 11.11111111111111
+      },
+      {
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "count": 1,
+        "percentage": 11.11111111111111
+      },
+      {
+        "address": "0x1234567890123456789012345678901234567890",
+        "count": 1,
+        "percentage": 11.11111111111111
+      }
+    ],
+    "address_frequency_distribution": {
+      "1": 3,
+      "2-5": 3,
+      "6-10": 0,
+      "11-50": 0,
+      "51-100": 0,
+      "101-500": 0,
+      "501+": 0
+    },
+    "pointer_size_bytes": 1,
+    "original_address_bytes": 180,
+    "compressed_address_bytes": 123,
+    "potential_savings_percentage": 31.666666666666664
+  },
+  "calldata_pattern_analysis": {
+    "total_embedded_addresses": 20,
+    "unique_embedded_addresses": 20,
+    "address_reuse_rate_in_calldata": 0.0,
+    "top_embedded_addresses": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0000000000000000000000000000000005f5e100",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x000000000000000000000003884d387e2eda1f00",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0000000000000000000000000000000000008000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0xc6c06298d514db089934071355e5743bf21d6000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0000000000000000000000000000064a97b53000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0000000000000000000000000000000000002000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0xaaa39b223fe8d0a0e5c4f27ead9083c756cc2000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0000000000000000000000000de0b6b3a7640000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x5b50610150806100206000396000f3fe60806040",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x5b50600436106100365760003560e01c80632e64",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x1d14610059575b600080fd5b610043610075565b",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x5b60405180910390f35b61007360048036038101",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x007e565b005b60008054905090565b8060008190",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x50565b61009b81610088565b82525050565b6000",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x0184610092565b92915050565b600080fd5b6100",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x57600080fd5b50565b6000813590506100e78161",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x60208284031215610103576101026100bc565b5b",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0x565b9150509291505056fea26469706673582212",
+        "count": 1,
+        "percentage": 5.0
+      },
+      {
+        "address": "0xf448589177ba5a442d18efc8349b3e1f6a1a3b2d",
+        "count": 1,
+        "percentage": 5.0
+      }
+    ],
+    "embedded_address_frequency": {
+      "1": 20,
+      "2-5": 0,
+      "6-10": 0,
+      "11-50": 0,
+      "51-100": 0,
+      "101-500": 0,
+      "501+": 0
+    },
+    "embedded_pointer_size_bytes": 1,
+    "original_embedded_bytes": 400,
+    "compressed_embedded_bytes": 400,
+    "potential_calldata_savings_percentage": 0.0
+  },
+  "temporal_locality_analysis": {
+    "temporal_locality_analysis": {}
+  }
+}

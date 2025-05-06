@@ -1,0 +1,82 @@
+{
+  "name": "ZeroCompress Default Benchmark Configuration",
+  "description": "Default configuration for benchmarking ZeroCompress against other compression implementations",
+  "datasets": {
+    "sample_transactions": "/Users/samuel/Eth/ZeroCompress/data/sample_transactions.json"
+  },
+  "compressors": {
+    "ZeroCompress": {
+      "enabled": true,
+      "description": "Full ZeroCompress implementation combining all techniques"
+    },
+    "ZeroByteCompressor": {
+      "enabled": true,
+      "description": "Zero-byte compression using RLE only"
+    },
+    "AddressCompressor": {
+      "enabled": true,
+      "description": "Address dictionary compression only"
+    },
+    "FunctionSelectorCompressor": {
+      "enabled": true,
+      "description": "Function selector optimization only"
+    },
+    "CalldataCompressor": {
+      "enabled": true,
+      "description": "Calldata pattern recognition only"
+    },
+    "Sequence-CZIP": {
+      "enabled": true,
+      "description": "Sequence.xyz's CZIP implementation (reference model)"
+    }
+  },
+  "metrics": {
+    "compression_ratio": {
+      "weight": 0.4,
+      "higher_is_better": true
+    },
+    "encode_time_ms": {
+      "weight": 0.2,
+      "higher_is_better": false
+    },
+    "decode_time_ms": {
+      "weight": 0.1,
+      "higher_is_better": false
+    },
+    "estimated_gas": {
+      "weight": 0.3,
+      "higher_is_better": false
+    }
+  },
+  "visualization": {
+    "colors": {
+      "ZeroCompress": "#2ca02c",
+      "Sequence-CZIP": "#ff7f0e",
+      "AddressCompressor": "#1f77b4",
+      "ZeroByteCompressor": "#d62728",
+      "FunctionSelectorCompressor": "#9467bd",
+      "CalldataCompressor": "#8c564b"
+    },
+    "generate_charts": true,
+    "chart_formats": ["png", "svg"],
+    "charts": [
+      "compression_ratio_by_compressor",
+      "compression_ratio_by_txn_type",
+      "gas_cost_comparison",
+      "encoding_time_comparison",
+      "overall_score_comparison"
+    ]
+  },
+  "reporting": {
+    "generate_html": true,
+    "generate_markdown": true,
+    "include_raw_data": true
+  },
+  "benchmark_options": {
+    "threads": 4,
+    "transaction_limit": 10000,
+    "warm_up_runs": 2,
+    "verification": true,
+    "save_compressed_data": false
+  }
+} 

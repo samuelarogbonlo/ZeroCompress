@@ -1,0 +1,10 @@
+{
+  "transaction_count": 25,
+  "type_distribution": {
+    "contract_interaction": 23,
+    "eth_transfer": 2
+  },
+  "calldata_stats": {
+    "mean": 244.8,
+    "median": 132.0,
+    "min": 

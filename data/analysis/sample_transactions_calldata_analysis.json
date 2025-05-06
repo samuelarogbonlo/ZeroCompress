@@ -1,0 +1,85 @@
+{
+  "function_analysis": {
+    "total_transactions_analyzed": 5,
+    "unique_signatures": 4,
+    "top_signatures": {},
+    "compression_potential": {
+      "bytes_saved_per_tx": 3.0,
+      "total_bytes_saved": 15,
+      "percentage_savings": 75.0
+    }
+  },
+  "parameter_analysis": {
+    "total_signatures_analyzed": 0,
+    "parameter_patterns": {}
+  },
+  "calldata_structure": {
+    "total_transactions": 5,
+    "calldata_size_stats": {
+      "mean": 153.4,
+      "median": 69.0,
+      "min": 36,
+      "max": 368,
+      "std_dev": 126.11359958386724,
+      "total_bytes": 767
+    },
+    "pattern_percentages": {
+      "empty_calldata": 0.0,
+      "has_function_signature": 100.0,
+      "contains_address": 80.0,
+      "contains_zeros": 80.0
+    },
+    "compression_estimate": {
+      "signature_encoding": 15,
+      "address_encoding": 48,
+      "potential_savings_bytes": 63,
+      "potential_savings_percentage": 8.213820078226858
+    }
+  },
+  "repeated_patterns": {
+    "ngram_analysis": {
+      "8": {
+        "total_ngrams_analyzed": 732,
+        "unique_patterns": 436,
+        "common_patterns_count": 0,
+        "common_pattern_coverage": 0.0,
+        "top_patterns": [
+          {
+            "pattern": "00000000",
+            "count": 242,
+            "percentage": 33.060109289617486
+          }
+        ]
+      },
+      "16": {
+        "total_ngrams_analyzed": 712,
+        "unique_patterns": 500,
+        "common_patterns_count": 0,
+        "common_pattern_coverage": 0.0,
+        "top_patterns": [
+          {
+            "pattern": "0000000000000000",
+            "count": 198,
+            "percentage": 27.808988764044944
+          }
+        ]
+      },
+      "32": {
+        "total_ngrams_analyzed": 672,
+        "unique_patterns": 549,
+        "common_patterns_count": 0,
+        "common_pattern_coverage": 0.0,
+        "top_patterns": [
+          {
+            "pattern": "00000000000000000000000000000000",
+            "count": 124,
+            "percentage": 18.452380952380953
+          }
+        ]
+      }
+    },
+    "compression_potential": {
+      "dictionary_based": 0
+    }
+  }
+}

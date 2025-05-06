@@ -145,18 +145,22 @@ class TransactionCollector:
         for block in tqdm(blocks, desc="Processing blocks"):
             for tx in block.transactions:
                 try:
-                    # Convert TxData to dict
-                    if isinstance(tx, (dict, TxData)):
-                        tx_dict = dict(tx)
-                    else:
-                        # If it's a HexBytes or other format, get it by hash
-                        tx_dict = dict(self.w3.eth.get_transaction(tx))
+                    # Convert to dict - Fix for TypedDict error
+                    tx_dict = dict(tx)
+                    
+                    # Convert any HexBytes objects to hex strings
+                    for key, value in list(tx_dict.items()):
+                        if isinstance(value, bytes):
+                            tx_dict[key] = value.hex()
+                            if key in ['to', 'from'] and tx_dict[key]:
+                                tx_dict[key] = '0x' + tx_dict[key]
                     
                     tx_dict = self._process_transaction(tx_dict, block)
                     if tx_dict:
                         transactions.append(tx_dict)
                 except Exception as e:
-                    logger.error(f"Error processing transaction {tx.hash if hasattr(tx, 'hash') else 'unknown'}: {e}")
+                    tx_hash = tx.get('hash', 'unknown') if hasattr(tx, 'get') else 'unknown'
+                    logger.error(f"Error processing transaction {tx_hash}: {e}")
         
         return transactions
     
@@ -172,8 +176,6 @@ class TransactionCollector:
                 processed_tx[key] = str(value) if value is not None else None
             elif key in ['to', 'from']:
                 processed_tx[key] = value.lower() if value is not None else None
-            elif isinstance(value, (bytes, bytearray)):
-                processed_tx[key] = to_hex(value)
             else:
                 processed_tx[key] = value
         
@@ -253,24 +255,35 @@ class TransactionCollector:
         # Convert to DataFrame for easier analysis
         df = pd.DataFrame(transactions)
         
+        # Fill NaN values with appropriate defaults
+        df = df.fillna({
+            'calldata_size': 0,
+            'zero_bytes': 0,
+            'zero_byte_percentage': 0,
+            'type': 'unknown'
+        })
+        
         # Transaction type distribution
         type_counts = df['type'].value_counts().to_dict()
         
+        # Convert pandas data types to native Python types
+        type_counts = {k: int(v) for k, v in type_counts.items()}
+        
         # Calldata size statistics
         calldata_stats = {
-            'mean': df['calldata_size'].mean(),
-            'median': df['calldata_size'].median(),
-            'min': df['calldata_size'].min(),
-            'max': df['calldata_size'].max(),
-            'total': df['calldata_size'].sum(),
+            'mean': float(df['calldata_size'].mean()),
+            'median': float(df['calldata_size'].median()),
+            'min': int(df['calldata_size'].min()),
+            'max': int(df['calldata_size'].max()),
+            'total': int(df['calldata_size'].sum()),
         }
         
         # Zero byte statistics
         zero_byte_stats = {
-            'mean_percentage': df['zero_byte_percentage'].mean() * 100,
-            'median_percentage': df['zero_byte_percentage'].median() * 100,
-            'total_zero_bytes': df['zero_bytes'].sum(),
-            'potential_savings': df['zero_bytes'].sum() / df['calldata_size'].sum() * 100,
+            'mean_percentage': float(df['zero_byte_percentage'].mean() * 100),
+            'median_percentage': float(df['zero_byte_percentage'].median() * 100),
+            'total_zero_bytes': int(df['zero_bytes'].sum()),
+            'potential_savings': float(df['zero_bytes'].sum() / df['calldata_size'].sum() * 100) if df['calldata_size'].sum() > 0 else 0,
         }
         
         # Statistics by transaction type
@@ -278,10 +291,10 @@ class TransactionCollector:
         for tx_type in df['type'].unique():
             type_df = df[df['type'] == tx_type]
             type_stats[tx_type] = {
-                'count': len(type_df),
-                'avg_calldata_size': type_df['calldata_size'].mean(),
-                'total_calldata_size': type_df['calldata_size'].sum(),
-                'avg_zero_byte_percentage': type_df['zero_byte_percentage'].mean() * 100,
+                'count': int(len(type_df)),
+                'avg_calldata_size': float(type_df['calldata_size'].mean()),
+                'total_calldata_size': int(type_df['calldata_size'].sum()),
+                'avg_zero_byte_percentage': float(type_df['zero_byte_percentage'].mean() * 100),
             }
         
         return {
@@ -312,37 +325,103 @@ def main():
                         help='Network to collect data from')
     parser.add_argument('--output-dir', type=str, default='./data',
                         help='Directory to save output files')
+    parser.add_argument('--output-file', type=str, default=None,
+                        help='Specific output file name (default: auto-generated based on timestamp)')
     parser.add_argument('--start-block', type=int, default=None,
-                        help='Starting block number (default: latest block - 100)')
-    parser.add_argument('--num-blocks', type=int, default=100,
+                        help='Starting block number (default: latest block - num_blocks)')
+    parser.add_argument('--blocks', type=int, default=100,
                         help='Number of blocks to collect (default: 100)')
+    parser.add_argument('--max-transactions', type=int, default=None,
+                        help='Maximum number of transactions to collect (default: no limit)')
+    parser.add_argument('--api-key', type=str, default=None,
+                        help='API key for block explorer (optional, increases rate limits)')
+    parser.add_argument('--analyze-only', action='store_true',
+                        help='Only analyze existing data, do not collect new transactions')
+    parser.add_argument('--quick', action='store_true',
+                        help='Quick mode: collect fewer blocks for faster testing')
+    parser.add_argument('--verbose', action='store_true',
+                        help='Enable verbose logging')
     
     args = parser.parse_args()
+    
+    # Configure logging based on verbosity
+    if args.verbose:
+        logging.getLogger().setLevel(logging.DEBUG)
+    
+    # Quick mode override
+    if args.quick:
+        args.blocks = min(args.blocks, 5)
+        if args.max_transactions is None:
+            args.max_transactions = 100
+    
+    # Set API key if provided
+    if args.api_key:
+        NETWORK_CONFIGS[args.network]['explorer_api_key'] = args.api_key
     
     try:
         collector = TransactionCollector(args.network, args.output_dir)
         
+        # Analyze only mode
+        if args.analyze_only:
+            # Find most recent transaction file
+            network_dir = os.path.join(args.output_dir, args.network)
+            if not os.path.exists(network_dir):
+                logger.error(f"Network directory does not exist: {network_dir}")
+                return 1
+            
+            tx_files = [f for f in os.listdir(network_dir) if f.endswith('.json') and 'transactions' in f]
+            if not tx_files:
+                logger.error(f"No transaction files found in {network_dir}")
+                return 1
+            
+            # Sort by modified time (newest first)
+            tx_files.sort(key=lambda x: os.path.getmtime(os.path.join(network_dir, x)), reverse=True)
+            latest_file = os.path.join(network_dir, tx_files[0])
+            
+            logger.info(f"Analyzing latest transaction file: {latest_file}")
+            
+            # Load transactions
+            with open(latest_file, 'r') as f:
+                transactions = json.load(f)
+            
+            # Analyze transactions
+            analysis = collector.analyze_transactions(transactions)
+            
+            # Save analysis
+            analysis_file = collector.save_analysis(analysis)
+            
+            logger.info(f"Successfully analyzed {len(transactions)} transactions from {args.network}")
+            return 0
+        
+        # Normal collection mode
         # If start block not specified, use latest block - num_blocks
         if args.start_block is None:
             latest_block = collector.w3.eth.block_number
-            args.start_block = max(0, latest_block - args.num_blocks)
+            args.start_block = max(0, latest_block - args.blocks)
         
         # Collect block data
-        blocks = collector.collect_blocks(args.start_block, args.num_blocks)
+        blocks = collector.collect_blocks(args.start_block, args.blocks)
         
         # Extract and process transactions
         transactions = collector.collect_transactions(blocks)
         
+        # Apply transaction limit if specified
+        if args.max_transactions is not None and len(transactions) > args.max_transactions:
+            logger.info(f"Limiting to {args.max_transactions} transactions")
+            transactions = transactions[:args.max_transactions]
+        
         # Save transactions
-        collector.save_transactions(transactions)
+        output_file = collector.save_transactions(transactions, args.output_file)
         
         # Analyze transactions
         analysis = collector.analyze_transactions(transactions)
         
         # Save analysis
-        collector.save_analysis(analysis)
+        analysis_file = collector.save_analysis(analysis)
         
         logger.info(f"Successfully collected and analyzed {len(transactions)} transactions from {args.network}")
+        logger.info(f"Transaction data: {output_file}")
+        logger.info(f"Analysis data: {analysis_file}")
         
     except Exception as e:
         logger.error(f"Error in data collection: {e}", exc_info=True)
